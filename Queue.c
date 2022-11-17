@@ -4,7 +4,7 @@ void push();
 void pop();
 void traverse();
 int peek();
-void deck();
+// void deck();
 // void circular_queue();
 int queue[5];
 int rear = 0;
@@ -15,7 +15,7 @@ int main()
     int choice;
     while (choice != 5)
     {
-        printf("\n1.Push\n2.Pop\n3.Traverse\n4.Peek\n5.Types of Queue\n6.Exit\nEnter your choice : ");
+        printf("\n1.Push\n2.Pop\n3.Traverse\n4.Peek\n6.Exit\nEnter your choice : ");//5.Types of Queue
         scanf("%d", &choice);
         switch (choice)
         {
@@ -31,22 +31,22 @@ int main()
         case 4:
             printf("\nThe top most element is %d\n", peek());
             break;
-        case 5:
-            printf("Types of Queue : \n1.DECK\n2.Circular Queue\n");
-            printf("\nEnter another choice : ");
-            scanf("%d", &type_queue);
-            switch (type_queue)
-            {
-            case 1:
-                deck();
-                break;
-            // case 2:
-            //     circular_queue();
-            default:
-                printf("Invalid Input....");
-                break;
-            }
-            break;
+        // case 5:
+        //     printf("Types of Queue : \n1.DECK\n2.Circular Queue\n");
+        //     printf("\nEnter another choice : ");
+        //     scanf("%d", &type_queue);
+        //     switch (type_queue)
+        //     {
+        //     case 1:
+        //         deck();
+        //         break;
+        //     // case 2:
+        //     //     circular_queue();
+        //     default:
+        //         printf("Invalid Input....");
+        //         break;
+        //     }
+        //     break;
         case 6:
             exit(0);
             break;
@@ -119,21 +119,21 @@ int peek()
     }
 }
 
-void deck(){
-    int ch,ch2,ele2;
-    printf("\n1.Insertion in deck\n2.Deletion in deck\n");
-    scanf("%d",&ch);
-//     if (ch==1)
-//     {
-//         insertion();
-//     }
-//     else if (ch==2)
-//     {
-//         deletion();
-//     }
-//     else
-//     printf("Invalid input...");
-//     }
-// void insertion(){
-//     int a;
-}
+// void deck(){
+//     int ch,ch2,ele2;
+//     printf("\n1.Insertion in deck\n2.Deletion in deck\n");
+//     scanf("%d",&ch);
+// //     if (ch==1)
+// //     {
+// //         insertion();
+// //     }
+// //     else if (ch==2)
+// //     {
+// //         deletion();
+// //     }
+// //     else
+// //     printf("Invalid input...");
+// //     }
+// // void insertion(){
+// //     int a;
+// }
