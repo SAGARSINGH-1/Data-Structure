@@ -7,6 +7,8 @@ struct node
 };
 struct node *head;
 
+// Insertion all operation's
+
 void beg_insert()
 {
     int item;
@@ -75,6 +77,77 @@ void display()
     }
 }
 
+// Deletion all operation's
+
+void beg_delete()
+{
+    if (head == NULL)
+    {
+        printf("Underflow..");
+        exit(0);
+    }
+    else
+    {
+        struct node *temp = head;
+        head = temp->next;
+        free(temp);
+        printf("Node deleted from begining");
+    }
+}
+
+void end_delete()
+{
+    if (head == NULL)
+    {
+        printf("Underflow..");
+        exit(0);
+    }
+    else if (head->next = NULL)
+    {
+        head = NULL;
+        free(head);
+        printf("\nOnly node of the list deleted ...\n");
+    }
+    else
+    {
+        struct node *temp = head;
+        struct node *loc;
+        while (temp->next != NULL)
+        {
+            loc = temp;
+            temp = temp->next;
+        }
+        loc->next = NULL;
+        free(temp);
+        printf("Node deleted from end");
+    }
+}
+
+void spec_delete()
+{
+    if (head == NULL)
+    {
+        printf("Underflow..");
+        exit(0);
+    }
+    else
+    {
+        int n;
+        printf("Enter the position : ");
+        scanf("%d", &n);
+        struct node *temp = head;
+        struct node *loc;
+        for (int i = 0; i < n - 1; i++)
+        {
+            loc = temp;
+            temp = temp->next;
+        }
+        loc->next = temp->next;
+        free(temp);
+        printf("Node deleted from specified position");
+    }
+}
+
 void main()
 {
     int a;
@@ -82,7 +155,8 @@ void main()
     while (b > 4)
     {
         printf("\nEnter the choice : \n");
-        printf("Insertion : \n1.At Begining \n2.At End \n3.At Specific \n4.Display\n");
+        printf("\nInsertion : \n1.At Begining \n2.At End \n3.At Specific \n4.Display\n");
+        printf("\nDeletion : \n5.At Begining \n6.At End \n7.At Specific\n");
         scanf("%d", &a);
 
         switch (a)
@@ -98,6 +172,15 @@ void main()
             break;
         case 4:
             display();
+            break;
+        case 5:
+            beg_delete();
+            break;
+        case 6:
+            end_delete();
+            break;
+        case 7:
+            spec_delete();
             break;
 
         default:
