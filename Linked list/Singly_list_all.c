@@ -10,6 +10,7 @@ struct node *head;
 // Insertion all operation's
 
 void beg_insert()
+
 {
     int item;
     struct node *ptr;
@@ -102,7 +103,7 @@ void end_delete()
         printf("Underflow..");
         exit(0);
     }
-    else if (head->next = NULL)
+    else if (head->next == NULL)
     {
         head = NULL;
         free(head);
@@ -130,11 +131,25 @@ void spec_delete()
         printf("Underflow..");
         exit(0);
     }
+    else if (head->next == NULL)
+    {
+        head = NULL;
+        free(head);
+        printf("\nOnly node of the list deleted ...\n");
+    }
     else
     {
         int n;
         printf("Enter the position : ");
         scanf("%d", &n);
+        if (n == 1)
+        {
+            struct node *temp = head;
+            head = temp->next;
+            free(temp);
+            printf("The node will be deleted and head point another node");
+        }
+        else{
         struct node *temp = head;
         struct node *loc;
         for (int i = 0; i < n - 1; i++)
@@ -145,6 +160,7 @@ void spec_delete()
         loc->next = temp->next;
         free(temp);
         printf("Node deleted from specified position");
+        }
     }
 }
 
